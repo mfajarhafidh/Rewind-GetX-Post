@@ -36,7 +36,14 @@ class HomeView extends GetView<HomeController> {
                     clipBehavior: Clip.hardEdge,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
-                        color: backgroundColor),
+                        color: backgroundColor,
+                        boxShadow: [
+                          BoxShadow(
+                            blurRadius: 5,
+                            color: Colors.black54,
+                            offset: Offset(0.0, 0.75)
+                          )
+                        ]),
                     padding: EdgeInsets.only(
                         left: 19, right: 8, top: 26, bottom: 16),
                     child: ListTile(
