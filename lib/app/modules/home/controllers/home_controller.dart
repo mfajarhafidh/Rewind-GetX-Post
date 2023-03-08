@@ -31,6 +31,8 @@ class HomeController extends GetxController {
     try{
       final response = await ListArticleService().deleteArticleService(id: value);
       Logger().d(response);
+      final respAfterDelete = await ListArticleService().getListArticleService();
+      listNews.addAll(respAfterDelete.reversed);
       Get.snackbar("Success", "You have succesfully Delete the Article!");
       isLoading.toggle();
     } catch(e){

@@ -18,6 +18,7 @@ class ListArticleService{
   Future deleteArticleService({required String id}) async{
     final response = await _connect.delete('posts/$id');
     Logger().d(response.statusCode.toString());
+    getListArticleService();
     if(!response.hasError){
       return response.body!;
     } else{

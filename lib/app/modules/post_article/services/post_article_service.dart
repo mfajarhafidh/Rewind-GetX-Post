@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:logger/logger.dart';
 
 class PostArticleService{
   final _connect = Get.find<GetConnect>();
@@ -11,6 +12,7 @@ class PostArticleService{
         'userId': 11
       });
     if(!response.hasError){
+      Logger().d(response.statusCode);
       return response.body!;
     } else{
       throw Get.snackbar("Error", response.statusCode.toString());
