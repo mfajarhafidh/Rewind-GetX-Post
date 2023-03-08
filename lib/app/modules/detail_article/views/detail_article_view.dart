@@ -49,6 +49,7 @@ class DetailArticleView extends GetView<DetailArticleController> {
                           controller.detailNews.value.body.toString(),
                           style:
                               headline3.copyWith(fontWeight: FontWeight.w400),
+                          textAlign: TextAlign.justify,
                         ),
                       ),
               ),
