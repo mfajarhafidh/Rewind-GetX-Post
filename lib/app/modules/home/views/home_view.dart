@@ -47,6 +47,11 @@ class HomeView extends GetView<HomeController> {
                   padding: EdgeInsets.only(
                       left: 19, right: 8, top: 26, bottom: 16),
                   child: ListTile(
+                    trailing: IconButton(
+                      onPressed: (){
+                        controller.deleteArticleController(controller.listNews[index].id.toString());
+                      }, 
+                      icon: Icon(Icons.close, color: Colors.black,)),
                     onTap: () => Get.toNamed(Routes.DETAIL_ARTICLE,
                         arguments: {
                           'id': controller.listNews[index].id.toString()
